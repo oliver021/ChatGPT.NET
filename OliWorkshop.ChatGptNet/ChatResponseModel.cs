@@ -5,22 +5,57 @@ using System.Text.Json.Serialization;
 
 namespace OliWorkshop.ChatGptNet
 {
-    public partial class ModelRequest
+    /// <summary>
+    /// This model class sets the data responsed by endpoint.
+    /// </summary>
+    public class ChatResponseModel
     {
+        /// <summary>
+        /// Quick access the first choice. Often this will be unique choice.
+        /// </summary>
+        public Choice First => Choices[0];
+
+
+        /// <summary>
+        /// Response id.
+        /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }
+
+        /// <summary>
+        /// Type of the object.
+        /// </summary>
 
         [JsonPropertyName("object")]
         public string Object { get; set; }
 
+        /// <summary>
+        /// Timestamp
+        /// </summary>
         [JsonPropertyName("created")]
         public long Created { get; set; }
 
+        /// <summary>
+        /// The choices offers by the model.
+        /// </summary>
         [JsonPropertyName("choices")]
         public Choice[] Choices { get; set; }
 
+        /// <summary>
+        /// The tracking usage properties.
+        /// </summary>
         [JsonPropertyName("usage")]
         public Usage Usage { get; set; }
+
+        /// <summary>
+        /// If the response is success you got true.
+        /// </summary>
+        public bool Success { get; set; } = true;
+
+        /// <summary>
+        /// When the Success is false this property will be set.
+        /// </summary>
+        public string Reason { get; internal set; }
     }
 
     public partial class Choice
