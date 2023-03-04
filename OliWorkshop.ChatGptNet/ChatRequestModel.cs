@@ -15,6 +15,6 @@
         public long? Temperature { get; set; } = null;
 
         [JsonPropertyName("messages")]
-        public ModelMessage[] Messages { get; set; }
+        public MessageModel[] Messages { get; set; }
     }
 }

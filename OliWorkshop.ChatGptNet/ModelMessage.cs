@@ -7,28 +7,28 @@
     /// The model message to send requests.
     /// </summary>
     [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
-    public class ModelMessage
+    public class MessageModel
     {
         public const string UserAuthor = "user";
         public const string AssistantAuthor = "assistant";
         public const string SystemAuthor = "system";
 
-        public static ModelMessage ByUser(string message)
+        public static MessageModel ByUser(string message)
         {
-            return new ModelMessage(UserAuthor, message);
+            return new MessageModel(UserAuthor, message);
         }
 
-        public static ModelMessage ByAssitant(string message)
+        public static MessageModel ByAssitant(string message)
         {
-            return new ModelMessage(AssistantAuthor, message);
+            return new MessageModel(AssistantAuthor, message);
         }
 
-        public static ModelMessage BySystem(string message)
+        public static MessageModel BySystem(string message)
         {
-            return new ModelMessage(SystemAuthor, message);
+            return new MessageModel(SystemAuthor, message);
         }
 
-        public ModelMessage(string role, string content)
+        public MessageModel(string role, string content)
         {
             Role = role;
             Content = content;

@@ -26,12 +26,12 @@ namespace OliWorkshop.ChatGptNet
             return new ChatContextIteration(await ChatAPI.SendAsync(message));
         }
 
-        public async Task<ChatContextIteration> NextAsync(params ModelMessage[] messages)
+        public async Task<ChatContextIteration> PushAsync(params MessageModel[] messages)
         {
             return new ChatContextIteration(await ChatAPI.SendAsync(messages));
         }
 
-        public async Task<ChatContextIteration> PushAsync(IEnumerable<ModelMessage> messages)
+        public async Task<ChatContextIteration> PushAsync(IEnumerable<MessageModel> messages)
         {
             return null;
         }

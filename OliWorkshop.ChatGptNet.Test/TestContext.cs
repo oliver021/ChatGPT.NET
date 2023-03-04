@@ -13,13 +13,23 @@ namespace OliWorkshop.ChatGptNet.Test
         [SetUp]
         public void Setup()
         {
-            Ctx = new ChatContext("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");
+            Ctx = new ChatContext(Environment.GetEnvironmentVariable("OpenAIKey"));
         }
 
         [Test]
         public async Task Test()
         {
             var response = await Ctx.NextAsync("Cloud tell me how avoid feel me bored?");
+
+            Console.WriteLine(response?.Message);
+        }
+
+        [Test]
+        public async Task Test2()
+        {
+            var response = await Ctx.PushAsync(
+               Model 
+            );
 
             Console.WriteLine(response?.Message);
         }

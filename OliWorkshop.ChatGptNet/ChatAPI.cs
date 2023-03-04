@@ -48,7 +48,7 @@ namespace OliWorkshop.ChatGptNet
         /// <param name="message"></param>
         /// <param name="cancellation"></param>
         /// <returns></returns>
-        public Task<ChatResponseModel> SendAsync(params ModelMessage[] messages)
+        public Task<ChatResponseModel> SendAsync(params MessageModel[] messages)
         {
             return SendAsync(messages);
         }
@@ -62,7 +62,7 @@ namespace OliWorkshop.ChatGptNet
         /// <returns></returns>
         public Task<ChatResponseModel> SendAsync(string message, CancellationToken cancellation = default)
         {
-            return SendAsync(new []{ModelMessage.ByUser(message)}, -1, cancellation);
+            return SendAsync(new []{MessageModel.ByUser(message)}, -1, cancellation);
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace OliWorkshop.ChatGptNet
         /// <param name="messages"></param>
         /// <param name="cancellation"></param>
         /// <returns></returns>
-        public async Task<ChatResponseModel> SendAsync(ModelMessage[] messages, long temperature = -1, CancellationToken cancellation = default)
+        public async Task<ChatResponseModel> SendAsync(MessageModel[] messages, long temperature = -1, CancellationToken cancellation = default)
         {
             try
             {

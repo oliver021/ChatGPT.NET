@@ -64,7 +64,7 @@ namespace OliWorkshop.ChatGptNet
         public long Index { get; set; }
 
         [JsonPropertyName("message")]
-        public ModelMessage Message { get; set; }
+        public MessageModel Message { get; set; }
 
         [JsonPropertyName("finish_reason")]
         public string FinishReason { get; set; }
