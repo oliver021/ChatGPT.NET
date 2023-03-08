@@ -48,7 +48,7 @@ namespace OliWorkshop.ChatGptNet
         /// <param name="message"></param>
         /// <param name="cancellation"></param>
         /// <returns></returns>
-        public Task<ChatResponseModel> SendAsync(params MessageModel[] messages)
+        public Task<ChatResponseModel> SendAllAsync(params MessageModel[] messages)
         {
             return SendAsync(messages);
         }

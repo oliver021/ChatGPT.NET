@@ -40,3 +40,13 @@ cutting edge of natural language processing technology.
 
 ### Let's do it easy
 ![Sample Code](images/intro-code-sample.png)
+
+## Intro in ChatContext Class
+
+The ChatContext class is a tool that makes it easy to chat with OpenAI's GPT model.
+With this class, you can pass in a token and a system message, and the NextAsync 
+method will send the message to the endpoint and receive a response. The class also
+records messages to build a context, so each iteration sends a history of messages 
+to receive the best response. 
+This makes it a seamless way to use GPT model.
+

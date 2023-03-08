@@ -14,7 +14,7 @@ namespace OliWorkshop.ChatGptNet.Test
         public async Task Test()
         {
             var response = await Client.SendAsync(new[] { 
-                MessageModel.ByUser("Hello!! tell me a joke")
+                MessageModel.ByUser("Hello!! tell me a joke about dogs")
             });
 
             Console.WriteLine(response?.Choices[0].Message);

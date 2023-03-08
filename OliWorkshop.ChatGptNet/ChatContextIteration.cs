@@ -17,5 +17,11 @@ namespace OliWorkshop.ChatGptNet
         /// Quick access to the first choice's message.
         /// </summary>
         public string Message => Response.First.Message.Content;
+
+        public bool IsSuccess => Response.Success;
+        
+        public string ErrorMessage => Response.Reason;
+
+
     }
 }
